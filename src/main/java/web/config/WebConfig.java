@@ -40,11 +40,15 @@ public class WebConfig implements WebMvcConfigurer {
         return templateEngine;
     }
 
-
+    /**
+     * В метод добавлена строка кода:
+     * resolver.setCharacterEncoding("UTF-8"); // для отображения символов кириллицы на web-страницах
+     */
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
+        resolver.setCharacterEncoding("UTF-8"); // для отображения символов кириллицы на web-страницах
         registry.viewResolver(resolver);
     }
 }

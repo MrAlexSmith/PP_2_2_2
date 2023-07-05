@@ -1,0 +1,22 @@
+<!--
+  Данный файл конструируется следующим образом:
+    1. В исходной директории копируется файл 'index.html' с новым именем 'cars.html';
+    2. Добавить имя название страницы 'Car' в содержимое тега '<title>' (опционально);
+    3. Переместить атрибут 'lang="ru"' из второго тега '<html>' в первый (опционально);
+    4. Удалить второй (пустой) тег '<html>';
+    5. Остальное содержимое файла остаётся неизменным.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+  </head>
+  <body>
+    <div>
+      <th:block th:each="msg : ${messages}">
+        <h1 th:text="${msg}"></h1>
+      </th:block>
+    </div>
+  </body>
+</html>
